@@ -25,6 +25,13 @@ function Register() {
     theme: 'dark',
   };
 
+  // 로컬 스토리지에 'chat-app-user'라는 키로 저장된 값이 있다면, '/' 경로로 이동
+  useEffect(() => {
+    if (localStorage.getItem('chat-app-user')) {
+      navigate('/');
+    }
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
